@@ -15,22 +15,23 @@ if zeros%2 != 0:
 arr.sort()
 
 
-for t in arr:
+while bool(arr):
+    t = arr[0]
     if t*2 not in arr:
         break
-    if t%2 == 0 and t//2 in original:
-        continue
+    arr.remove(t)
+    arr.remove(t*2)
     original.append(t)
     
-    
 
-if len(arr) != len(original)*2:
+
+if bool(arr):
     original = []
+
 print("done")
 
 
-
-print(original)
+# print(original)
 
 
 
