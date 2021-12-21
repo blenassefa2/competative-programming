@@ -3,7 +3,7 @@ nums = [-96,839,615,374,209,-579,568,162,949,403,-437,274,-785,73,-329,-608,740,
 # ans.reverse()
 k = 1096
 
-counter = 0
+
 counts = {(x,nums.count(x)) for x in nums}
 
     
@@ -13,7 +13,7 @@ for i in range(k):
     a= max(counts, key = lambda x:x[1])
     counts.remove(a)
     ans.append(a[0])
-    counter+=1
+    
 print(ans)
 print("Done!")
 print()
