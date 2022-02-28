@@ -1,18 +1,26 @@
-s = "3[a2[c]]"
-stack = ""
-re = ""
-for i in s:
+k = 3
+i = 0
+nums = [1,1,2,1,1]
+k = 3
+lst = []
+final = 0
+
+while i < len(nums):
     
-    if i != "]":
-        stack+=i
-    else:
-        r =""
+    
+        count = k 
+        j = i
+        while j < len(nums) and count >= 0:
+            if nums[j] % 2 != 0:
+                count -= 1 
+            j += 1
+        final += 1
+
+        while i < j:
+            if nums[i] % 2 != 0:
+                break
+            final += 1
+            i+= 1
         
-        while stack[-1] != "[":
-            r = stack[-1] + r
-            stack = stack[:-1]
-        r = r*int(stack[-2])
-        stack = stack[:-2]
-        stack += r
-        re =r
-print(re)
+    
+print(final)
